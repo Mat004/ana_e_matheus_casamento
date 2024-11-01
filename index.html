@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chá de Panela Ana & Matheus</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+
+</head>
+<body>
+    <!-- Tela inicial: Solicita o nome completo -->
+    <div id="form-nome" class="centered">
+        <h2>Bem-vindo ao Chá de Panela!</h2>
+        <p>Por favor, insira seu nome completo para continuar:</p>
+        <input type="text" id="nome" placeholder="Nome completo">
+        <button id="iniciar">Entrar</button>
+    </div>
+
+    <!-- Tela de presentes (inicialmente escondida) -->
+    <div id="tela-presentes" class="hidden">
+        <header>
+            <h1>Chá de Panela Ana & Matheus</h1>
+            <p>Estamos muito felizes em celebrar com você!</p>
+        </header>
+
+        <div id="fotos">
+            <div class="foto">
+                <img src="img/Ana.jpg" alt="Foto Ana">
+                <p>Ana</p>
+            </div>
+            <i class="fas fa-heart" id="heart-icon"></i> <!-- Ícone de coração aqui -->
+            <div class="foto">
+                <img src="img/Matheus.jpg" alt="Foto Matheus">
+                <p>Matheus</p>
+            </div>
+        </div>
+
+        <section>
+            <h2>Lista de Presentes</h2>
+            <div id="presentes">
+                <!-- Exemplo de um presente com imagem -->
+                <div class="presente">
+                    <img src="img/itens/abridor de garrafas e latas.png" alt="Abridor de garrafas e latas" class="img-presente">
+                    <p>Abridor de garrafas e latas</p>
+                    <button class="escolher" data-presente="Abridor de garrafas e latas">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/acucareio.jpg" alt="Açucareiro" class="img-presente">
+                    <p>Açucareiro</p>
+                    <button class="escolher" data-presente="Açucareiro">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/amolador de facas.jpg" alt="Afiador de facas" class="img-presente">
+                    <p>Afiador de facas</p>
+                    <button class="escolher" data-presente="Afiador de facas">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/air fryer.jpg" alt="Air fryer 2 em 1 - 11L (Philco)" class="img-presente">
+                    <p>Air fryer 2 em 1 - 11L (Philco)</p>
+                    <button class="escolher" data-presente="Air fryer 2 em 1 - 11L (Philco)">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/aspirador de pó.jpg" alt="Aspirador de pó (Preto)" class="img-presente">
+                    <p>Aspirador de pó (Preto)</p>
+                    <button class="escolher" data-presente="Aspirador de pó (Preto)">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/assadeiras anti aderente.jpg" alt="Assadeiras antiaderentes" class="img-presente">
+                    <p>Assadeiras antiaderentes</p>
+                    <button class="escolher" data-presente="Assadeiras antiaderentes">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/bacia plastica.jpeg" alt="Bacia plástica" class="img-presente">
+                    <p>Bacia plástica</p>
+                    <button class="escolher" data-presente="Bacia plástica">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/balde dobrável.jpg" alt="Balde dobrável (10L)" class="img-presente">
+                    <p>Balde dobrável (10L)</p>
+                    <button class="escolher" data-presente="Balde dobrável (10L)">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/bandeja inox.jpg" alt="Bandeja" class="img-presente">
+                    <p>Bandeja</p>
+                    <button class="escolher" data-presente="Bandeja">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/batedor de ovos.jpg" alt="Batedor de ovos" class="img-presente">
+                    <p>Batedor de ovos</p>
+                    <button class="escolher" data-presente="Batedor de ovos">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/bowls.jpg" alt="Bowls" class="img-presente">
+                    <p>Bowls</p>
+                    <button class="escolher" data-presente="Bowls">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/cesto de lixo.jpg" alt="Cesto de lixo p/ banheiro (Inox - 5L)" class="img-presente">
+                    <p>Cesto de lixo p/ banheiro (Inox - 5L)</p>
+                    <button class="escolher" data-presente="Cesto de lixo p/ banheiro (Inox - 5L)">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/cobertor casal.jpg" alt="Cobertor" class="img-presente">
+                    <p>Cobertor</p>
+                    <button class="escolher" data-presente="Cobertor">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/colher silicone.jpeg" alt="Conjunto de colheres de silicone (6 peças)" class="img-presente">
+                    <p>Conjunto de colheres de silicone (6 peças)</p>
+                    <button class="escolher" data-presente="Conjunto de colheres de silicone (6 peças)">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/concha.jpg" alt="Concha para molho" class="img-presente">
+                    <p>Concha para molho</p>
+                    <button class="escolher" data-presente="Concha para molho">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/concha sorvete.jpg" alt="Concha para sorvete" class="img-presente">
+                    <p>Concha para sorvete</p>
+                    <button class="escolher" data-presente="Concha para sorvete">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/conjunto de peneiras.jpg" alt="Conjunto de peneiras" class="img-presente">
+                    <p>Conjunto de peneiras</p>
+                    <button class="escolher" data-presente="Conjunto de peneiras">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/conjunto de potes herméticos.jpg" alt="Conjunto de potes herméticos (10 peças)" class="img-presente">
+                    <p>Conjunto de potes herméticos (10 peças)</p>
+                    <button class="escolher" data-presente="Conjunto de potes herméticos (10 peças)">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/conjunto de pratos.jpg" alt="Conjunto de pratos (rasos, fundos e sobremesa)" class="img-presente">
+                    <p>Conjunto de pratos (rasos, fundos e sobremesa)</p>
+                    <button class="escolher" data-presente="Conjunto de pratos (rasos, fundos e sobremesa)">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/tapete.jpeg" alt="Conjunto de tapete p/ cozinha" class="img-presente">
+                    <p>Conjunto de tapete p/ cozinha</p>
+                    <button class="escolher" data-presente="Conjunto de tapete p/ cozinha">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/copo medidor.jpg" alt="Copos de medidas" class="img-presente">
+                    <p>Copos de medidas</p>
+                    <button class="escolher" data-presente="Copos de medidas">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/copo agua.jpg" alt="Copos para água (6 copos)" class="img-presente">
+                    <p>Copos para água (6 copos)</p>
+                    <button class="escolher" data-presente="Copos para água (6 copos)">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/cuscuzeira.jpeg" alt="Cuscuzeira" class="img-presente">
+                    <p>Cuscuzeira</p>
+                    <button class="escolher" data-presente="Cuscuzeira">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/descanso de panela.jpg" alt="Descanso de panela (4 peças)" class="img-presente">
+                    <p>Descanso de panela (4 peças)</p>
+                    <button class="escolher" data-presente="Descanso de panela (4 peças)">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/edredom casal.jpg" alt="Edredom p/ cama casal" class="img-presente">
+                    <p>Edredom p/ cama casal</p>
+                    <button class="escolher" data-presente="Edredom p/ cama casal">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/escorredor de macarrão.jpg" alt="Escorredor de macarrão (Inox)" class="img-presente">
+                    <p>Escorredor de macarrão (Inox)</p>
+                    <button class="escolher" data-presente="Escorredor de macarrão (Inox)">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/escorredor de pratos.jpg" alt="Escorredor de pratos (Inox)" class="img-presente">
+                    <p>Escorredor de pratos (Inox)</p>
+                    <button class="escolher" data-presente="Escorredor de pratos (Inox)">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/espatula.jpg" alt="Espátula" class="img-presente">
+                    <p>Espátula</p>
+                    <button class="escolher" data-presente="Espátula">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/espremedor de alho.jpg" alt="Espremedor de alho (Inox)" class="img-presente">
+                    <p>Espremedor de alho (Inox)</p>
+                    <button class="escolher" data-presente="Espremedor de alho (Inox)">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/espremedor de batatas.png" alt="Espremedor de batatas (Inox)" class="img-presente">
+                    <p>Espremedor de batatas (Inox)</p>
+                    <button class="escolher" data-presente="Espremedor de batatas (Inox)">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/espremedor de limao.jpg" alt="Espremedor de limão (Inox)" class="img-presente">
+                    <p>Espremedor de limão (Inox)</p>
+                    <button class="escolher" data-presente="Espremedor de limão (Inox)">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/extrator de escama.jpg" alt="Extrator de escama" class="img-presente">
+                    <p>Extrator de escama</p>
+                    <button class="escolher" data-presente="Extrator de escama">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/faqueiro inox.jpg" alt="Faqueiro (Inox)" class="img-presente">
+                    <p>Faqueiro (Inox)</p>
+                    <button class="escolher" data-presente="Faqueiro (Inox)">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/ferro roupa.jpg" alt="Ferro de passar roupa (Black & Deck)" class="img-presente">
+                    <p>Ferro de passar roupa (Black & Deck)</p>
+                    <button class="escolher" data-presente="Ferro de passar roupa (Black & Deck)">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/forma de bolo.jpg" alt="Formas de bolo" class="img-presente">
+                    <p>Formas de bolo</p>
+                    <button class="escolher" data-presente="Formas de bolo">Escolher</button>
+                </div>               
+                <div class="presente">
+                    <img src="img/itens/kit 3 forma pizza.png" alt="Kit 3 formas para pizza" class="img-presente">
+                    <p>Kit 3 formas para pizza</p>
+                    <button class="escolher" data-presente="Kit 3 formas para pizza">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/forma para gelo.jpg" alt="Forma de gelo" class="img-presente">
+                    <p>Forma de gelo</p>
+                    <button class="escolher" data-presente="Forma de gelo">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/frigideira.jpeg" alt="Frigideira anti aderente (Tamanho G)" class="img-presente">
+                    <p>Frigideira anti aderente (Tamanho G)</p>
+                    <button class="escolher" data-presente="Frigideira anti aderente (Tamanho G)">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/frigideira.jpeg" alt="Frigideira anti aderente (Tamanho M)" class="img-presente">
+                    <p>Frigideira anti aderente (Tamanho M)</p>
+                    <button class="escolher" data-presente="Frigideira anti aderente (Tamanho M)">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/frigideira.jpeg" alt="Frigideira anti aderente (Tamanho P)" class="img-presente">
+                    <p>Frigideira anti aderente (Tamanho P)</p>
+                    <button class="escolher" data-presente="Frigideira anti aderente (Tamanho P)">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/fruteira.jpeg" alt="Fruteira" class="img-presente">
+                    <p>Fruteira</p>
+                    <button class="escolher" data-presente="Fruteira">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/galheteiro.jpg" alt="Galheteiro" class="img-presente">
+                    <p>Galheteiro</p>
+                    <button class="escolher" data-presente="Galheteiro">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/garrafa termica.jpg" alt="Garrafa térmica" class="img-presente">
+                    <p>Garrafa térmica</p>
+                    <button class="escolher" data-presente="Garrafa térmica">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/grela grill p fogão.jpg" alt="Grela grill p/ fogão" class="img-presente">
+                    <p>Grela grill p/ fogão</p>
+                    <button class="escolher" data-presente="Grela grill p/ fogão">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/jarra de vidro.jpg" alt="Jarra para suco com tampa" class="img-presente">
+                    <p>Jarra para suco com tampa</p>
+                    <button class="escolher" data-presente="Jarra para suco com tampa">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/jogo americano.jpg" alt="Jogo americano (4 peças)" class="img-presente">
+                    <p>Jogo americano (4 peças)</p>
+                    <button class="escolher" data-presente="Jogo americano (4 peças)">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/jogo cama casal 4 peças.jpg" alt="Jogo de cama casal (4 peças)" class="img-presente">
+                    <p>Jogo de cama casal (4 peças)</p>
+                    <button class="escolher" data-presente="Jogo de cama casal (4 peças)">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/sobremes.jpg" alt="Jogo de taças p/ sobremesa (6 peças)" class="img-presente">
+                    <p>Jogo de taças p/ sobremesa (6 peças)</p>
+                    <button class="escolher" data-presente="Jogo de taças p/ sobremesa (6 peças)">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/jogo de xicara.jpeg" alt="Jogos de xícara e pires (6 peças)" class="img-presente">
+                    <p>Jogos de xícara e pires (6 peças)</p>
+                    <button class="escolher" data-presente="Jogos de xícara e pires (6 peças)">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/kit potes plástico.jpg" alt="Kit potes de plástico" class="img-presente">
+                    <p>Kit potes de plástico</p>
+                    <button class="escolher" data-presente="Kit potes de plástico">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/leiteira.jpg" alt="Leiteira" class="img-presente">
+                    <p>Leiteira</p>
+                    <button class="escolher" data-presente="Leiteira">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/lixeira pia.jpg" alt="Lixeira para pia" class="img-presente">
+                    <p>Lixeira para pia</p>
+                    <button class="escolher" data-presente="Lixeira para pia">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/luva termica.jpeg" alt="Luva térmica" class="img-presente">
+                    <p>Luva térmica</p>
+                    <button class="escolher" data-presente="Luva térmica">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/mantegueira de vidro.jpeg" alt="Mantegueira" class="img-presente">
+                    <p>Mantegueira</p>
+                    <button class="escolher" data-presente="Mantegueira">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/mini processador elétrico.jpg" alt="Mini processador elétrico" class="img-presente">
+                    <p>Mini processador elétrico</p>
+                    <button class="escolher" data-presente="Mini processador elétrico">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/MOP.jpg" alt="MOP" class="img-presente">
+                    <p>MOP</p>
+                    <button class="escolher" data-presente="MOP">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/multiprocessador.jpeg" alt="Multiprocessador - Philco" class="img-presente">
+                    <p>Multiprocessador - Philco</p>
+                    <button class="escolher" data-presente="Multiprocessador - Philco">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/conjunto de panelas.jpg" alt="Panelas antiaderentes" class="img-presente">
+                    <p>Panelas antiaderentes</p>
+                    <button class="escolher" data-presente="Panelas antiaderentes">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/panela de pressao.jpg" alt="Panelas de pressão elétrica" class="img-presente">
+                    <p>Panelas de pressão elétrica - Philco</p>
+                    <button class="escolher" data-presente="Panelas de pressão elétrica">Escolher</button>
+                </div>        
+                <div class="presente">
+                    <img src="img/itens/panos de prato.jpg" alt="Panos de prato (10 panos)" class="img-presente">
+                    <p>Panos de prato (10 panos)</p>
+                    <button class="escolher" data-presente="Panos de prato (10 panos)">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/toalha par.jpg" alt="Par de toalha de banho" class="img-presente">
+                    <p>Par de toalha de banho</p>
+                    <button class="escolher" data-presente="Par de toalha de banho">Escolher</button>
+                </div>  
+                <div class="presente">
+                    <img src="img/itens/toalha rosto.jpg" alt="Par de toalha de rosto" class="img-presente">
+                    <p>Par de toalha de rosto</p>
+                    <button class="escolher" data-presente="Par de toalha de rosto">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/pegador de massa.jpg" alt="Pegador de massa Inox" class="img-presente">
+                    <p>Pegador de massa Inox</p>
+                    <button class="escolher" data-presente="Pegador de massa Inox">Escolher</button>
+                </div> 
+                <div class="presente">
+                    <img src="img/itens/pegador salada.jpg" alt="Pegador de salada Inox" class="img-presente">
+                    <p>Pegador de salada Inox</p>
+                    <button class="escolher" data-presente="Pegador de salada Inox">Escolher</button>
+                </div> 
+                <div class="presente">
+                    <img src="img/itens/pilão de madeira.jpg" alt="Pilão de madeira" class="img-presente">
+                    <p>Pilão de madeira</p>
+                    <button class="escolher" data-presente="Pilão de madeira">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/pix 20.jpg" alt="Pix de R$20" class="img-presente">
+                    <p>Pix de R$20</p>
+                    <button class="escolher" data-presente="Pix de R$20">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/pix 50.jpg" alt="Pix de R$50" class="img-presente">
+                    <p>Pix de R$50</p>
+                    <button class="escolher" data-presente="Pix de R$50">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/pix 100.jpg" alt="Pix de R$100" class="img-presente">
+                    <p>Pix de R$100</p>
+                    <button class="escolher" data-presente="Pix de R$100">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/meme.jpeg" alt="Pix de R$200" class="img-presente">
+                    <p>Pix de R$200</p>
+                    <button class="escolher" data-presente="Pix de R$200">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/porta frios.jpg" alt="Porta frios" class="img-presente">
+                    <p>Porta frios</p>
+                    <button class="escolher" data-presente="Porta frios">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/porta guardanapo.jpg" alt="Porta guardanapo" class="img-presente">
+                    <p>Porta guardanapo</p>
+                    <button class="escolher" data-presente="Porta guardanapo">Escolher</button>
+                </div>   
+                <div class="presente">
+                    <img src="img/itens/porta pão.jpg" alt="Porta pão" class="img-presente">
+                    <p>Porta pão</p>
+                    <button class="escolher" data-presente="Porta pão">Escolher</button>
+                </div> 
+                <div class="presente">
+                    <img src="img/itens/porta tempero.jpg" alt="Porta tempero" class="img-presente">
+                    <p>Porta tempero</p>
+                    <button class="escolher" data-presente="Porta tempero">Escolher</button>
+                </div>   
+                <div class="presente">
+                    <img src="img/itens/potes de vidro com tampa.jpg" alt="Potes de vidro com tampa (6 peças)" class="img-presente">
+                    <p>Potes de vidro com tampa (6 peças)</p>
+                    <button class="escolher" data-presente="Potes de vidro com tampa (6 peças)">Escolher</button>
+                </div> 
+                <div class="presente">
+                    <img src="img/itens/potes microondas.jpg" alt="Potes p/ microondas (10 peças)" class="img-presente">
+                    <p>Potes p/ microondas (10 peças)</p>
+                    <button class="escolher" data-presente="Potes p/ microondas (10 peças)">Escolher</button>
+                </div> 
+                <div class="presente">
+                    <img src="img/itens/protetor colchão casal.jpg" alt="Protetor de colchão casal" class="img-presente">
+                    <p>Protetor de colchão casal</p>
+                    <button class="escolher" data-presente="Protetor de colchão casal">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/puxa saco.jpg" alt="Puxa saco" class="img-presente">
+                    <p>Puxa saco</p>
+                    <button class="escolher" data-presente="Puxa saco">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/queijeira.jpg" alt="Queijeira" class="img-presente">
+                    <p>Queijeira</p>
+                    <button class="escolher" data-presente="Queijeira">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/ralador.jpg" alt="Ralador" class="img-presente">
+                    <p>Ralador</p>
+                    <button class="escolher" data-presente="Ralador">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/rodo de pia.jpg" alt="Rodo para pia" class="img-presente">
+                    <p>Rodo para pia</p>
+                    <button class="escolher" data-presente="Rodo para pia">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/rolo de massa.jpg" alt="Rolo de abrir massa" class="img-presente">
+                    <p>Rolo de abrir massa</p>
+                    <button class="escolher" data-presente="Rolo de abrir massa">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/saladeira.jpg" alt="Saladeira" class="img-presente">
+                    <p>Saladeira</p>
+                    <button class="escolher" data-presente="Saladeira">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/sanduicheira.jpg" alt="Sanduicheira" class="img-presente">
+                    <p>Sanduicheira</p>
+                    <button class="escolher" data-presente="Sanduicheira">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/tábua de roupa.jpg" alt="Tábua de passar roupa" class="img-presente">
+                    <p>Tábua de passar roupa</p>
+                    <button class="escolher" data-presente="Tábua de passar roupa">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/tábua de vidro.jpg" alt="Tábua de vidro" class="img-presente">
+                    <p>Tábua de vidro</p>
+                    <button class="escolher" data-presente="Tábua de vidro">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/taças de vidro.jpg" alt="Taças de vidro" class="img-presente">
+                    <p>Taças de vidro</p>
+                    <button class="escolher" data-presente="Taças de vidro">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/tapete banheiro.jpg" alt="Tapete p/ banheiro" class="img-presente">
+                    <p>Tapete p/ banheiro</p>
+                    <button class="escolher" data-presente="Tapete p/ banheiro">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/tesoura para cozinha.jpg" alt="Tesoura de cozinha" class="img-presente">
+                    <p>Tesoura de cozinha</p>
+                    <button class="escolher" data-presente="Tesoura de cozinha">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/toalha de mesa.jpg" alt="Toalha de mesa" class="img-presente">
+                    <p>Toalha de mesa</p>
+                    <button class="escolher" data-presente="Toalha de mesa">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/travessa de vidro com tampa.jpeg" alt="Travessas de vidro com tampa" class="img-presente">
+                    <p>Travessas de vidro com tampa</p>
+                    <button class="escolher" data-presente="Travessas de vidro com tampa">Escolher</button>
+                </div>
+                <div class="presente">
+                    <img src="img/itens/varal portátil.jpg" alt="Varal portátil" class="img-presente">
+                    <p>Varal portátil</p>
+                    <button class="escolher" data-presente="Varal portátil">Escolher</button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Botão flutuante de envio -->
+        <button id="enviar" class="flutuante">💌 Enviar Lista</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+<!-- Rodapé -->
+<!-- Rodapé -->
+<footer>
+    <p>Feito com <span style="color: red;">❤️</span> por Ana e Matheus</p>
+    <p>Todos os direitos reservados &copy; 2024</p>
+</footer>
+
+</html>
