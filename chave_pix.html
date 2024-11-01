@@ -7,12 +7,27 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="centered">
-        <h2>Dados para transferência via Pix</h2>
-        <p><strong>Banco:</strong> Banco Exemplo</p>
-        <p><strong>Nome:</strong> Ana e Matheus</p>
-        <p><strong>Chave Pix:</strong> 123.456.789-00</p>
-        <button onclick="window.history.back()">Voltar</button>
-    </div>
+    <h1>Dados para Pix</h1>
+    <p><strong>Banco:</strong> 123 - Banco Exemplo</p>
+    <p><strong>Nome:</strong> Ana e Matheus</p>
+    <p><strong>Chave Pix:</strong> <span id="chavePix">12345678900</span></p>
+
+    <!-- Botão para copiar a chave Pix -->
+    <button onclick="copiarChavePix()">Copiar chave Pix</button>
+
+    <script>
+        function copiarChavePix() {
+            const chavePix = document.getElementById("chavePix").textContent;
+
+            navigator.clipboard.writeText(chavePix)
+                .then(() => {
+                    alert("Chave Pix copiada para a área de transferência!");
+                })
+                .catch(err => {
+                    console.error("Erro ao copiar a chave Pix: ", err);
+                });
+        }
+    </script>
 </body>
 </html>
+
