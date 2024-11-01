@@ -26,8 +26,8 @@ document.querySelectorAll('.escolher').forEach(button => {
         }
 
         presentesSelecionados.push(presente);
+        localStorage.setItem('presentesSelecionados', JSON.stringify(presentesSelecionados)); // Armazenar no localStorage
         alert(`${presente} foi adicionado à sua lista!`);
-        console.log('Presentes selecionados:', presentesSelecionados);
 
         
         // Alterar o texto e a cor do botão imediatamente
@@ -244,3 +244,26 @@ function fecharLista() {
 function irParaPresentes() {
     window.location.href = 'presentes_selecionados.html';  // Substitua pelo link da sua página de presentes
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Carregar presentes selecionados do localStorage
+    const presentesSelecionados = JSON.parse(localStorage.getItem('presentesSelecionados')) || [];
+
+    // Chamada inicial para renderizar a lista
+    renderizarLista(presentesSelecionados);
+});
+
+function renderizarLista(presentes) {
+    const lista = document.getElementById('suaLista'); // Substitua 'suaLista' pelo ID correto da sua lista
+
+    // Limpa a lista antes de renderizar
+    lista.innerHTML = '';
+
+    // Renderiza cada presente selecionado
+    presentes.forEach(presente => {
+        const item = document.createElement('li'); // Ou o elemento que você estiver usando
+        item.textContent = presente; // Ajuste isso de acordo com como você deseja mostrar os presentes
+        lista.appendChild(item);
+    });
+}
+
