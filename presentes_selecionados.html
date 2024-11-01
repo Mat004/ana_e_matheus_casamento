@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentes Selecionados</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Seus Presentes Selecionados</h1>
+    <div id="listaPresentes">
+        <!-- Lista de presentes selecionados vai aparecer aqui -->
+    </div>
+
+    <button onclick="adicionarMais()" style="display: block; margin: 20px auto;">Adicionar mais presentes</button>
+
+    <script>
+        // Carregar presentes selecionados do localStorage
+        const presentesSelecionados = JSON.parse(localStorage.getItem('presentesSelecionados')) || [];
+
+        // Função para renderizar a lista de presentes
+        function renderizarLista() {
+            const listaPresentes = document.getElementById('listaPresentes');
+            listaPresentes.innerHTML = ''; // Limpar lista antes de renderizar
+
+            if (presentesSelecionados.length === 0) {
+                listaPresentes.innerHTML = '<p>Nenhum presente selecionado.</p>';
+                return;
+            }
+
+            presentesSelecionados.forEach((presente, index) => {
+                const item = document.createElement('div');
+                item.className = 'presenteItem';
+                item.innerHTML = `
+                    <p>${presente}</p>
+                    <button onclick="removerPresente(${index})">Remover</button>
+                `;
+                listaPresentes.appendChild(item);
+            });
+        }
+
+        // Função para remover um presente da lista
+        function removerPresente(index) {
+            presentesSelecionados.splice(index, 1); // Remover o presente pelo índice
+            localStorage.setItem('presentesSelecionados', JSON.stringify(presentesSelecionados)); // Atualizar localStorage
+            renderizarLista(); // Re-renderizar lista
+        }
+
+        // Função para adicionar mais presentes (volta para a página principal)
+        function adicionarMais() {
+            window.location.href = 'index.html'; // Ajuste para a URL da página de presentes
+        }
+
+        // Chamada inicial para renderizar a lista
+        renderizarLista();
+    </script>
+</body>
+</html>

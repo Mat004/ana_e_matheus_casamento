@@ -191,3 +191,56 @@ document.addEventListener('DOMContentLoaded', function () {
         window.scrollTo(0, 0); // Garantir que a página inicie no topo
     }, 100); // Ajuste o tempo conforme necessário
 });
+
+//Funções para manipular os presentes
+// Abrir a lista de presentes selecionados
+document.getElementById('verSelecionados').addEventListener('click', function() {
+    const lista = document.getElementById('presentesSelecionadosLista');
+    lista.innerHTML = '';
+
+    presentesSelecionados.forEach((presente, index) => {
+        const item = document.createElement('li');
+        item.textContent = presente;
+        
+        const removerBtn = document.createElement('button');
+        removerBtn.textContent = 'Remover';
+        removerBtn.onclick = function() {
+            removerPresente(index);
+        };
+
+        item.appendChild(removerBtn);
+        lista.appendChild(item);
+    });
+
+    document.getElementById('listaSelecionados').style.display = 'block';
+});
+
+// Função para remover presente
+function removerPresente(index) {
+    presentesSelecionados.splice(index, 1);  // Remove o item da lista
+    localStorage.setItem('presentesSelecionados', JSON.stringify(presentesSelecionados));  // Atualiza o localStorage
+
+    // Atualiza a exibição da lista
+    document.querySelectorAll('.escolher').forEach(button => {
+        if (presentesSelecionados.includes(button.getAttribute('data-presente'))) {
+            button.textContent = 'Selecionado';
+            button.disabled = true;
+            button.style.backgroundColor = 'grey';
+        } else {
+            button.textContent = 'Escolher';
+            button.disabled = false;
+            button.style.backgroundColor = '';
+        }
+    });
+
+    document.getElementById('verSelecionados').click();  // Atualiza a lista na página
+}
+
+// Fechar a lista de presentes selecionados
+function fecharLista() {
+    document.getElementById('listaSelecionados').style.display = 'none';
+}
+
+function irParaPresentes() {
+    window.location.href = 'presentes_selecionados.html';  // Substitua pelo link da sua página de presentes
+}
