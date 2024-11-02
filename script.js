@@ -170,7 +170,7 @@ function verificarDisponibilidadePresentesGoogleSheets() {
                         button.disabled = true;
                         button.classList.add('indisponivel');
                     } else {
-                        button.textContent = 'Escolher';
+                        button.textContent = 'Dar presente';
                         button.disabled = false;
                         button.classList.remove('indisponivel');
                     }
