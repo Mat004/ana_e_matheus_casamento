@@ -161,6 +161,9 @@ function verificarDisponibilidadePresentesGoogleSheets() {
                     const quantidade = contagemPresentes[presente] || 0;
                     const limite = limitesPresentes[presente];
 
+                    // Seleciona o botão do Pix correspondente
+                    const botaoPix = button.closest('.card').querySelector('.botao-pix');
+
                     if (button.classList.contains('selecionado')) {
                         return;  // Não mudar se já estiver selecionado
                     }
@@ -169,10 +172,24 @@ function verificarDisponibilidadePresentesGoogleSheets() {
                         button.textContent = 'Indisponível';
                         button.disabled = true;
                         button.classList.add('indisponivel');
+
+                        // Atualiza o botão Pix para ficar indisponível
+                        if (botaoPix) {
+                            botaoPix.disabled = true;
+                            botaoPix.classList.add('indisponivel');
+                            botaoPix.style.cursor = 'not-allowed';
+                        }
                     } else {
                         button.textContent = 'Dar presente';
                         button.disabled = false;
                         button.classList.remove('indisponivel');
+
+                        // Atualiza o botão Pix para ficar disponível
+                        if (botaoPix) {
+                            botaoPix.disabled = false;
+                            botaoPix.classList.remove('indisponivel');
+                            botaoPix.style.cursor = 'pointer';
+                        }
                     }
                 });
             }
