@@ -202,7 +202,7 @@ footer p {
 
 /* Estilo para o botão quando o presente estiver indisponível */
 .indisponivel {
-    background-color: grey;     /* Cor cinza para indicar indisponibilidade */
+    background-color: grey !important;     /* Cor cinza para indicar indisponibilidade */
     color: white;               /* Texto branco */
     cursor: not-allowed;        /* Cursor que indica indisponibilidade */
     box-shadow: none;           /* Remover sombra do botão */
