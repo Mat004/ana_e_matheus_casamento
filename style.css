@@ -251,7 +251,22 @@ footer {
 }
 
 
+/*Botão do pix*/
+button.pix {
+    padding: 8px 16px; /* Ajuste o padding para diminuir o tamanho */
+    margin-top: 5px; /* Diminui o espaçamento em relação ao botão de cima */
+    background-color: #f06292; /* Cor rosada */
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px; /* Reduz um pouco o tamanho da fonte */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
 
+button.pix:hover {
+    background-color: #ec407a; /* Cor de destaque ao passar o mouse */
+}
 
 
 
