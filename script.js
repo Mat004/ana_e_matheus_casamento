@@ -26,8 +26,8 @@ document.querySelectorAll('.escolher').forEach(button => {
         }
 
         presentesSelecionados.push(presente);
-        localStorage.setItem('presentesSelecionados', JSON.stringify(presentesSelecionados)); // Armazenar no localStorage
         alert(`${presente} foi adicionado à sua lista!`);
+        console.log('Presentes selecionados:', presentesSelecionados);
 
         
         // Alterar o texto e a cor do botão imediatamente
@@ -83,7 +83,7 @@ document.getElementById('enviar').addEventListener('click', function () {
         ]
     };
 
-    fetch('https://sheetdb.io/api/v1/lilmqffgjyxmh', {
+    fetch('https://sheetdb.io/api/v1/qwuzp9h3ari92', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -129,8 +129,8 @@ const limitesPresentes = {
 };
 
 // Substitua por seu ID da planilha e API key gerada no Google Cloud
-const spreadsheetId = '1ybA0mg-t5aC_60pW3JqwQ7bKXK-QKj8rUhwHvg2knpQ';
-const apiKey = 'AIzaSyBYSJFlWRuvhdgdSgEeDZyON3zdEUTNfq4';
+const spreadsheetId = '1STy321amnPhOZLwzJg47EPQtpxHPVZuywvZIdVSqxl4';
+const apiKey = 'AIzaSyBvqOyDwCVKvluva0Rg0g8Z0vxYUipc5KA';
 
 // Função para verificar disponibilidade
 function verificarDisponibilidadePresentesGoogleSheets() {
