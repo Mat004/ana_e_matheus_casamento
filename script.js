@@ -109,7 +109,23 @@ document.getElementById('enviar').addEventListener('click', function () {
 
 // Definir o limite de quantidade para cada presente (exemplo: 2 para "Conjunto de Panelas")
 const limitesPresentes = {
-    "Air fryer 2 em 1 - 11L (Philco)": 1
+    "Air fryer 2 em 1 - 11L (Philco)": 1,
+    "Armário de cozinha" : 1,
+    "Aspirador de pó (Preto)" : 1,
+    "Conjunto de pratos" : 1,
+    "Espelho grande" : 1,
+    "Exaustor/depurador para cozinha" : 1,
+    "Purificador de água" : 1,
+    "Guarda-roupa" : 1,
+    "Lua de mel" : 1,
+    "Mesa de jantar 4 lugares" : 1,
+    "Microondas" : 1,
+    "Multiprocessador - Philco" : 1,
+    "Painel de TV 50 polegadas" : 1,
+    "Panelas antiaderentes - Tramontina" : 1,
+    "Panelas de pressão elétrica - Philco" : 1,
+    "Sapateira" : 1,
+    "TV de 50 polegadas" : 1
 };
 
 // Substitua por seu ID da planilha e API key gerada no Google Cloud
