@@ -162,7 +162,7 @@ function verificarDisponibilidadePresentesGoogleSheets() {
                     const limite = limitesPresentes[presente];
 
                     // Seleciona o botão do Pix correspondente
-                    const botaoPix = button.closest('.card').querySelector('.pix');
+                    const botaoPix = button.closest('.presente').querySelector('.pix');
 
                     if (button.classList.contains('selecionado')) {
                         return;  // Não mudar se já estiver selecionado
