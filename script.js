@@ -118,6 +118,7 @@ const limitesPresentes = {
     "Purificador de água" : 1,
     "Guarda-roupa" : 1,
     "Lua de mel" : 1,
+    "Máquina lava e seca 10kg" : 1,
     "Mesa de jantar 4 lugares" : 1,
     "Microondas" : 1,
     "Multiprocessador - Philco" : 1,
