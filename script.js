@@ -112,7 +112,7 @@ const limitesPresentes = {
     "Air fryer 2 em 1 - 11L (Philco)": 1,
     "Armário de cozinha" : 1,
     "Aspirador de pó (Preto)" : 1,
-    "Conjunto de pratos (rasos, fundos e sobremesa)" : 1,
+    "Conjunto de pratos" : 1,
     "Espelho grande" : 1,
     "Exaustor/depurador para cozinha" : 1,
     "Purificador de água" : 1,
