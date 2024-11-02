@@ -76,7 +76,7 @@ button:hover {
     width: 180px;
     margin: 10px;
     padding: 20px;
-    background-color: #fce4ec; /* Fundo suave */
+    background-color: #ebe4fc; /* Fundo suave */
     border-radius: 15px;
     border: 2px dashed #f48fb1; /* Borda pontilhada */
     text-align: center;
@@ -168,14 +168,14 @@ button:hover {
 }
 
 button {
-    padding: 8px 16px;
+    padding: 10px 20px;
     margin-top: auto; /* Garante que o botão fique no final do contêiner */
     background-color: #f06292; /* Cor rosada */
     color: white;
     border: none;
     border-radius: 20px;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 16px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
@@ -268,6 +268,21 @@ button.pix:hover {
     background-color: #ec407a; /* Cor de destaque ao passar o mouse */
 }
 
+/*Botão dar presente*/
+button.escolher {
+    padding: 8px 16px;
+    background-color: #f06292; /* Cor rosada */
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+button.escolher:hover {
+    background-color: #ec407a; /* Cor de destaque ao passar o mouse */
+}
 
 
 
