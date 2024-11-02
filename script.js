@@ -169,26 +169,26 @@ function verificarDisponibilidadePresentesGoogleSheets() {
                     }
 
                     if (quantidade >= limite) {
+                        // Tornar o botão de presente indisponível
                         button.textContent = 'Indisponível';
                         button.disabled = true;
                         button.classList.add('indisponivel');
+                        button.style.cursor = 'not-allowed';
 
-                        // Atualiza o botão Pix para ficar indisponível
+                        // Esconder o botão do Pix
                         if (botaoPix) {
-                            botaoPix.disabled = true;
-                            botaoPix.classList.add('indisponivel');
-                            botaoPix.style.cursor = 'not-allowed';
+                            botaoPix.style.display = 'none';
                         }
                     } else {
+                        // Restabelecer o botão de presente se estiver disponível
                         button.textContent = 'Dar presente';
                         button.disabled = false;
                         button.classList.remove('indisponivel');
+                        button.style.cursor = 'pointer';
 
-                        // Atualiza o botão Pix para ficar disponível
+                        // Exibir o botão do Pix se disponível
                         if (botaoPix) {
-                            botaoPix.disabled = false;
-                            botaoPix.classList.remove('indisponivel');
-                            botaoPix.style.cursor = 'pointer';
+                            botaoPix.style.display = 'inline-block';
                         }
                     }
                 });
